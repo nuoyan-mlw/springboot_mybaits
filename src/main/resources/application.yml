@@ -1,0 +1,33 @@
+jdbc:
+  datasource:
+    driverClass: com.mysql.cj.jdbc.Driver
+    user: root
+    password: 123456
+    jdbcUrl: jdbc:mysql://localhost:3306/amazon
+    maxPoolSize: 100
+    minPoolSize: 10
+    initialPoolSize: 10
+
+server:
+  port: 8888
+  servlet:
+    context-path: /news
+
+spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    jedis:
+      pool:
+        max-active: 1100
+        max-idle: 10
+        min-idle: 5
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  type-aliases-package: com.crazycode.pojo
+  mapper-locations: classpath:com/crazycode/mapper/*.xml

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间+ id 名字来确定唯一的sql语句-->
+<mapper namespace="com.crazycode.mapper.NewsMapper">
+    <select id="queryAllNews" resultMap="m_news">
+        select id,title,content,create_time from amz_news
+    </select>
+
+    <resultMap id="m_news" type="news">
+        <id property="id" column="id"></id>
+        <result property="title" column="title"></result>
+        <result property="content" column="content"></result>
+        <result property="create_time" column="create_time"></result>
+    </resultMap>
+
+
+    <select id="login" resultType="user">
+        select id,uname,pwd,sex,birthday,idcard,email,mobile,address,utype from amz_user where uname=#{username} and pwd=#{password}
+    </select>
+</mapper>

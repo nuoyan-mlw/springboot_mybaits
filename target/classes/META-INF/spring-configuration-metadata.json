@@ -1,0 +1,12 @@
+{
+  "groups": [
+    {
+      "name": "jdbc.datasource",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.crazycode.config.C3P0Config",
+      "sourceMethod": "C3P0dataSource()"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
